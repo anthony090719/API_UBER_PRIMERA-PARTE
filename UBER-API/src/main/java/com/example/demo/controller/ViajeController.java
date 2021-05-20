@@ -63,8 +63,10 @@ public class ViajeController {
 			if(oViaje.isPresent()) {
 				Viaje actual = oViaje.get(); 
 				actual.setId(id);
-				actual.setPartida(viaje.getPartida());
+				actual.setOrigen(viaje.getOrigen());
 				actual.setDestino(viaje.getDestino());
+				actual.setEstado(viaje.getEstado());
+				actual.setMonto(viaje.getMonto());
 				Viaje updatedViaje = repository.save(actual);
 				return updatedViaje;
 			}
